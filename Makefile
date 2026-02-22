@@ -1,7 +1,6 @@
-.PHONY: all build run test lint docker-build
+.PHONY: all build run test lint
 
 APP_NAME := server
-DOCKER_IMAGE := utils-etin-dev
 
 all: build
 
@@ -16,6 +15,3 @@ test:
 
 lint:
 	go vet ./...
-
-docker-build:
-	docker build -t $(DOCKER_IMAGE) .

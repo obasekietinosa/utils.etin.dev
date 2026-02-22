@@ -5,7 +5,6 @@ Bespoke utilities exposed as endpoints for my use. This project provides a simpl
 ## Prerequisites
 
 *   [Go](https://go.dev/dl/) 1.24+
-*   [Docker](https://docs.docker.com/get-docker/) (optional)
 *   Make (optional)
 
 ## Project Structure
@@ -41,19 +40,6 @@ make build
 # or
 go build -o server ./cmd/server
 ```
-
-### Running with Docker
-
-1.  Build the Docker image:
-    ```bash
-    make docker-build
-    # or
-    docker build -t utils-etin-dev .
-    ```
-2.  Run the container:
-    ```bash
-    docker run -p 8080:8080 utils-etin-dev
-    ```
 
 ## Development
 
