@@ -24,7 +24,13 @@ func main() {
 	// Create the handler with the loaded configuration and the email sending function
 	contactHandler := handlers.NewContactHandler(emailConfig, email.SendEmail)
 
-	mux.Handle("POST /contact", contactHandler)
+	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(`{"project": "utils.etin.dev", "description": "Bespoke utilities exposed as endpoints for my use"}`))
+	})
+
+	mux.Handle("POST /asocleans/contact", contactHandler)
 
 	port := os.Getenv("PORT")
 	if port == "" {
