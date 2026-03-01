@@ -111,7 +111,7 @@ func TestContactHandler_ServeHTTP(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			body, _ := json.Marshal(tt.requestBody)
-			req := httptest.NewRequest("POST", "/contact", bytes.NewBuffer(body))
+			req := httptest.NewRequest("POST", "/asocleans/contact", bytes.NewBuffer(body))
 			w := httptest.NewRecorder()
 
 			handler := handlers.NewContactHandler(mockEmailConfig, tt.mockSendEmail)

@@ -18,16 +18,16 @@ type Config struct {
 }
 
 func LoadConfig() (*Config, error) {
-	host := os.Getenv("SMTP_HOST")
-	port := os.Getenv("SMTP_PORT")
-	username := os.Getenv("SMTP_USERNAME")
-	password := os.Getenv("SMTP_PASSWORD")
-	from := os.Getenv("SMTP_FROM_EMAIL")
-	to := os.Getenv("SMTP_TO_EMAIL")
-	cc := os.Getenv("SMTP_CC_EMAILS")
+	host := os.Getenv("ASOCLEANS_SMTP_HOST")
+	port := os.Getenv("ASOCLEANS_SMTP_PORT")
+	username := os.Getenv("ASOCLEANS_SMTP_USERNAME")
+	password := os.Getenv("ASOCLEANS_SMTP_PASSWORD")
+	from := os.Getenv("ASOCLEANS_SMTP_FROM_EMAIL")
+	to := os.Getenv("ASOCLEANS_SMTP_TO_EMAIL")
+	cc := os.Getenv("ASOCLEANS_SMTP_CC_EMAILS")
 
 	if host == "" || port == "" || username == "" || password == "" || from == "" || to == "" {
-		return nil, fmt.Errorf("missing required SMTP environment variables")
+		return nil, fmt.Errorf("missing required ASOCLEANS_SMTP environment variables")
 	}
 
 	var ccList []string

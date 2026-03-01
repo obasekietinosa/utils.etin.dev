@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Start the server in the background
-# export SMTP_HOST=smtp.example.com
-# export SMTP_PORT=587
-# export SMTP_USERNAME=user
-# export SMTP_PASSWORD=pass
-# export SMTP_FROM_EMAIL=from@example.com
-# export SMTP_TO_EMAIL=to@example.com
+# export ASOCLEANS_SMTP_HOST=smtp.example.com
+# export ASOCLEANS_SMTP_PORT=587
+# export ASOCLEANS_SMTP_USERNAME=user
+# export ASOCLEANS_SMTP_PASSWORD=pass
+# export ASOCLEANS_SMTP_FROM_EMAIL=from@example.com
+# export ASOCLEANS_SMTP_TO_EMAIL=to@example.com
 # export PORT=8080
 
 # go run ./cmd/server &
@@ -14,7 +14,7 @@
 # sleep 2
 
 echo "Sending test request..."
-curl -X POST http://localhost:8080/contact \
+curl -X POST http://localhost:8080/asocleans/contact \
   -H "Content-Type: application/json" \
   -d '{
     "fullName": "Test User",
